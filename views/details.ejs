@@ -1,0 +1,41 @@
+<%- include('./partials/head.ejs') %>
+<body>
+    <nav class="nav">
+        <div>
+            <a href="/home"><h1>MY BLOG</h1></a>  
+        </div>  
+        <div>
+            <%- include('./partials/nav.ejs') %>
+        </div>   
+    </nav>
+    <div class="details">
+        <h2><%= blog.title %></h2>
+        <h4><%= blog.snippet %></h4>
+        <div>
+            <p><%= blog.body %></p>
+        </div>
+        <button class="all-blogs"><a href="/blogs">All blogs</a></button>
+        <button class="comments"><a href="/Comments">View comments</a></button>
+        <a class="delete" data-doc="<%= blog._id %>">delete</a> 
+    </div>
+    <form action="/comment" method="POST">
+        <textarea class="comment" name="comment" id="comment" placeholder="Comment here.."></textarea>
+        <button>comment</button>
+    </form>
+
+    <%- include('./partials/footer.ejs') %>
+
+    <script>
+        const trashcan = document.querySelector('a.delete');
+        trashcan.addEventListener('click', (e) => {
+            const endpoint = `/blogs/${trashcan.dataset.doc}`;
+            fetch(endpoint, {
+                method: 'DELETE'
+            })
+            .then((response) => response.json())
+            .then((data) => window.location.href = data.redirect)
+            .catch((err) => console.log(err));
+        })
+    </script>
+</body>
+</html>

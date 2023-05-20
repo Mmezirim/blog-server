@@ -1,0 +1,89 @@
+body{
+    max-width: 1200px;
+    margin: 20px auto;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+ul li{
+    padding: 10%;
+    font-weight: bolder;
+}
+li:hover{
+    text-decoration: underline 0.1em black;
+}
+li, a{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+form{
+    max-width: 600px;
+    margin: 0 auto;
+}
+input, textarea{
+    display: block;
+    width: 100%;
+    margin: 2em 0;
+    padding: 2em;
+    border: 0.2em solid grey;
+    border-radius: 0.7em;
+}
+textarea{
+    height: 10em;
+}
+.summary{
+    display: block;
+    margin: 1em 0;
+    padding-left: 4em;
+    border: 1px solid rgb(91, 91, 91);
+    box-shadow: 1px, 2px, 3px;
+    border-radius: 0.2em;
+}
+.summary:hover{
+    color: rgb(146, 146, 150);
+}
+.date{
+    font-size: x-small;
+    color: rgb(181, 181, 181);
+}
+.details{
+    position: relative;
+}
+.all-blogs, .comments{
+    border-radius: 1em;
+    background-color: rgb(252, 252, 255);
+    padding: 0.5em 2em;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.all-blogs:hover{
+    background-color: rgb(240, 240, 240);
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+}
+.delete{
+    position: absolute;
+    border-radius: 1em;
+    background-color: rgb(32, 32, 79);
+    padding: 0.5em 2em;
+    color: white;
+    cursor: pointer;
+}
+.delete:hover{
+    background-color: rgb(68, 68, 122);
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+}
+.create{
+    font-size: 2em;
+}
+footer{
+    color: rgb(195, 193, 193);
+    font-weight: bolder;
+    transform: translateY(1000%);
+}

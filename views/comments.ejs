@@ -1,0 +1,13 @@
+<%- include('./partials/head.ejs') %>
+<body>
+    <div class="column">
+        <% if(comments.length > 0) { %>
+            <% comments.forEach(comment => { %>
+                <p><%= comment.comment %></p>
+                <p class="date"><%= comment.createdAt.toLocaleDateString() %></p>
+            <% }) %>
+         <% } else { %>
+            <p>No comments yet...</p>
+         <% } %>
+    </div>
+</body>
